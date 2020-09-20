@@ -48,6 +48,11 @@ For i = 2 To lastrow
             Range("K" & summary_row).Value = (clos_price - open_price) / open_price
         End If
         Range("J" & summary_row).Value = clos_price - open_price
+        If Range("J" & summary_row).Value < 0 Then
+            Range("J" & summary_row).Interior.ColorIndex = 3
+        Else
+            Range("J" & summary_row).Interior.ColorIndex = 4
+        End If
         Range("K" & summary_row).NumberFormat = "0.00%"
         If Range("K" & summary_row).Value < 0 Then
             Range("K" & summary_row).Interior.ColorIndex = 3
